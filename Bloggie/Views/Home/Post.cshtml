@@ -1,0 +1,32 @@
+﻿@model Post
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h1>@Model.Title</h1>
+
+<div class="text-muted">
+    Post by @Model.Author.DisplayName on @Model.CreatedTime.ToShortDateString()
+</div>
+
+<div class="post-content">
+    @Html.Raw(Model.Content)
+</div>
+
+<div class="card-body">
+    <p>
+        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis
+        eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+    </p>
+    <small class="text-muted">
+        Post by @Model.Author.DisplayName on @Model.CreatedTime.ToShortDateString()
+    </small>
+
+    <form id="commentForm">
+        <div class="form-group">
+            <label>Write Your Comment</label>
+            <textarea class="form-control" rows="3" name="Comment" placeholder="Write your comment here"></textarea>
+        </div>
+        <button class="btn btn-success" id="btnComment">Send</button>
+    </form>
+</div>
